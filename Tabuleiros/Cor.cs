@@ -8,6 +8,8 @@
         Rosa,
         Verde,
         Azul,
-        Amarela
+        Amarela,
+        Ciano,
+        Magenta
     }
 }
