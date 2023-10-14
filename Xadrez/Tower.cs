@@ -22,58 +22,58 @@ namespace Xadrez
 
         public override bool[,] movimentosPossiveis()
         {
-            bool[,] matriz = new bool[tab.Linhas, tab.Colunas];
+            bool[,] matriz = new bool[tab.linhas, tab.colunas];
 
             Posicao pos = new Posicao(0, 0);
 
             // Norte (Acima)
-            pos.definirValores(posicao.Linha - 1, posicao.Coluna);
+            pos.definirValores(posicao.linha - 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                matriz[pos.Linha, pos.Coluna] = true;
+                matriz[pos.linha, pos.coluna] = true;
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.Linha = pos.Linha - 1;
+                pos.linha = pos.linha - 1;
             }
 
 
             // Sul (Abaixo)
-            pos.definirValores(posicao.Linha + 1, posicao.Coluna);
+            pos.definirValores(posicao.linha + 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                matriz[pos.Linha, pos.Coluna] = true;
+                matriz[pos.linha, pos.coluna] = true;
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.Linha = pos.Linha + 1;
+                pos.linha = pos.linha + 1;
             }
 
 
             // Leste (Direita)
-            pos.definirValores(posicao.Linha, posicao.Coluna + 1);
+            pos.definirValores(posicao.linha, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                matriz[pos.Linha, pos.Coluna] = true;
+                matriz[pos.linha, pos.coluna] = true;
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.Coluna = pos.Coluna + 1;
+                pos.coluna = pos.coluna + 1;
             }
 
             // Oeste (Esquerda)
-            pos.definirValores(posicao.Linha, posicao.Coluna - 1);
+            pos.definirValores(posicao.linha, posicao.coluna - 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                matriz[pos.Linha, pos.Coluna] = true;
+                matriz[pos.linha, pos.coluna] = true;
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.Coluna = pos.Coluna - 1;
+                pos.coluna = pos.coluna - 1;
             }
             return matriz;
         }

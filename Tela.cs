@@ -8,10 +8,10 @@ namespace Xadrez_Console
     {
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
-            for (int i=0; i<tab.Linhas; i++)
+            for (int i=0; i<tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                for (int j=0; j<tab.Colunas; j++)
+                for (int j=0; j<tab.colunas; j++)
                 {
                     Peca peca = tab.peca(i, j);
                     imprimirPeca(peca);
@@ -26,10 +26,10 @@ namespace Xadrez_Console
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkCyan;
 
-            for (int i = 0; i < tab.Linhas; i++)
+            for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                for (int j = 0; j < tab.Colunas; j++)
+                for (int j = 0; j < tab.colunas; j++)
                 {
                     if (posicoesPossiveis[i, j])
                     {
